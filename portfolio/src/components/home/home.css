@@ -1,0 +1,252 @@
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hand {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: wave 2s infinite;
+  font-size: 2rem; /* Adjust size as needed */
+  background-color: transparent;
+}
+
+.heading {
+  width: 50%;
+}
+
+.home__content {
+  grid-template-columns: 116px repeat(2, 1fr);
+  padding-top: 6rem;
+  column-gap: 4rem;
+  align-items: center;
+  
+}
+
+.home__img {
+  width: 400px;
+  height: 400px;
+  background: url(../../assets/WhatsApp\ Image\ 2024-11-08\ at\ 4.19.33\ AM.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  animation: slowBounce 3s ease-in-out infinite;
+  margin: 0 auto; /* Center image */
+}
+
+@keyframes slowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.home__social {
+  display: grid;
+  grid-template-columns: max-content;
+  row-gap: 1rem;
+}
+
+.home__social-icon {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.home__social-icon:hover {
+  color: var(--title-color-dark);
+}
+
+.home__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.home__subtitle {
+  position: relative;
+  font-size: var(--h3-font-size);
+  padding-left: 5.4rem;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-1);
+  background: linear-gradient(
+    90deg,
+    #ff7eb3,
+    #ff758c,
+    #ffce50,
+    #85ffbd,
+    #fffb7d,
+    #ff8c00,
+    #ff6bcb,
+    #6a00f4,
+    #00d4ff,
+    #f7971e,
+    #ffd200,
+    #00c6ff
+  ); /* Vibrant gradient */
+  background-size: 300% 300%; /* Bigger size for smoother transitions */
+  background-clip: text; /* Clip the gradient to the text only */
+  -webkit-background-clip: text; /* Webkit prefix for compatibility */
+  color: transparent; /* Transparent text to show the gradient */
+  animation: gradientShift 8s ease-in-out infinite; /* Smooth animation */
+}
+
+.home__subtitle::before {
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: 1px;
+  background-color: var(--text-color);
+  left: 0;
+  top: 1rem;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* //////////////////////// */
+.home__description {
+  font-size: 1.4rem;
+  max-width: 500px;
+  margin-bottom: var(--mb-3);
+}
+
+.home__container {
+  row-gap: 7rem;
+}
+
+.home__scroll {
+  margin-left: 9.25rem;
+}
+.wheel {
+  animation: scroll 2s ease infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(3.75rem);
+  }
+}
+
+.home__scroll-name {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-right: var(--mb-0-25);
+  margin-left: 2px;
+}
+
+.home__scroll-arrow {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+/* ===============BreakPoints========== */
+
+/* ====for large devices=== */
+@media screen and (max-width: 992px) {
+  .home__content {
+    grid-template-columns: 100px repeat(2, 1fr);
+    column-gap: 1.25rem;
+  }
+  .home__subtitle {
+    padding-left: 3.75rem;
+    margin-bottom: var(--mb-1);
+  }
+  .home__subtitle::before {
+    width: 42px;
+    top: 0.8rem;
+  }
+  .home__description {
+    max-width: initial;
+    margin-bottom: var(--mb-2-5);
+  }
+  .home__img {
+    width: 300px;
+    height: 300px;
+  }
+  .home__scroll {
+    margin-left: 7.5rem;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__content {
+    grid-template-columns: 1fr; /* Make it a single column layout */
+    padding-top: 3.5rem;
+  }
+  .home__img {
+    order: initial;
+    justify-self: center; /* Centers the image horizontally */
+    align-self: center; /* Centers the image vertically */
+    width: 300px;
+    height: 300px;
+  }
+  .home__data {
+    grid-column: 1/2; /* Adjusting to ensure content is centered properly */
+
+  }
+  .home__scroll {
+    display: none;
+  }
+  .home__social {
+
+    position: fixed; /* Fix position to keep it on the left */
+  top: 35%; /* Vertically center it */
+  left: 0.8rem; /* Align it to the far left */
+ 
+  transform: translateY(-50%); /* Offset the top to perfectly center it */
+  display: flex; /* Use flexbox to align icons */
+  flex-direction: column; /* Stack icons vertically */
+  gap: 1rem; /* Add spacing between the icons */
+ }
+}
+
+@media screen and (max-width: 350px) {
+  .home__img {
+    width: 250px;
+    height: 250px;
+  }
+}

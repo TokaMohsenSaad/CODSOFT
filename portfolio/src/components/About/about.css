@@ -1,0 +1,126 @@
+.about__container{
+    /* grid-template-columns: repeat(2, 1fr);
+    align-items: center; */
+    display: grid; /* Make it a grid container */
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    gap: 2rem; /* Space between the boxes */
+    margin-bottom: var(--mb-2);
+    align-items: center; /* Vertically align items */
+  
+}
+
+.about__img{
+    
+    /* width:500px;
+    border-radius: 1.5rem;
+    justify-self: center; */
+    width: 100%; /* Make image width responsive */
+    max-width: 500px; /* Set max width */
+    border-radius: 1.5rem;
+    justify-self: center; /* Center image horizontally */
+
+}
+
+.about__info{
+    /* grid-template-columns: repeat(3, 140px);
+    gap: 0.5rem;
+    margin-bottom: var(--mb-2); */
+    /* /////////////////////////// */
+    /* display: flex !important;        
+  justify-content: space-between;  
+  gap: 20px;                         
+  flex-wrap: wrap;   */
+  display: grid; /* Use grid layout for flexibility */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  gap: 20px; /* Space between items */
+   }
+
+.about__box{
+    /* background-color: var(--container-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    text-align: center;
+    padding: 1rem 1.25rem;
+     */
+     flex: 0 0 30%;                    /* Set each box to take up 30% of the available space */
+  display: flex;                     /* Ensure flex layout for the content inside each box */
+  flex-direction: column;            /* Arrange icon and text vertically */
+  align-items: center;               /* Center items horizontally */
+    }
+
+.about__icon{
+    /* font-size: 1.5rem;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-5); */
+    font-size: 40px; /* Adjust icon size */
+  margin-bottom: 10px;
+}
+
+.about__title{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
+.about__subtitle{
+    font-size: 1rem;
+
+}
+
+.about__description{
+    padding: 0 4rem 0 0;
+    margin-bottom: var(--mb-2-5);
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* ===============BreakPoints========== */
+
+/* ====for large devices=== */
+@media screen and (max-width: 992px) {
+    .about__container{
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
+    
+    }
+    .about__img{
+      width: 400px;
+    }
+    .about__box{
+      padding: 0.75rem 0.5rem;
+    }
+    .about__data{
+      text-align: center;
+    }
+    .about__info{
+        /* justify-content: center; */
+        display: grid; /* Use grid layout for flexibility */
+        grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+        gap: 20px; /* Space between items */
+    }
+
+    .about__description{
+        padding: 0 5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    }
+    
+   
+    
+    @media screen and (max-width: 576px) {
+        .about__info{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .about__description{
+            padding:0;
+        }
+    }
+    
+    @media screen and (max-width: 350px) {
+    .about__info{
+        grid-template-columns: repeat(2, 1fr);
+     
+    }
+    }
+    

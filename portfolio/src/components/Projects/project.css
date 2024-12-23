@@ -1,0 +1,115 @@
+/* Projects Section */
+.projects__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid on the page */
+  }
+  
+  .projects__card {
+    background: var(--container-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .projects__card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .projects__image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;  /* Adjusted to avoid pixelation */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .projects__name {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+   
+  }
+  
+  .projects__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .projects__technologies {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: var(--normal-font-size);
+  }
+
+  .bx-link.link{
+    font-size:30px;
+  }
+
+
+
+
+
+
+  /* ====================Modal Design================== */
+  /* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal is on top */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain; /* To maintain aspect ratio */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background: darkred;
+}
+
+  
