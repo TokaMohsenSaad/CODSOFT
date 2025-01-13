@@ -1,20 +1,3 @@
-// const initialState = []; // Ensure the initial state is an empty array
-
-// const addItems = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "ADDITEM":
-//       return [...state, action.payload];
-//     case "DELITEM":
-//       return state.filter((x) => x.id !== action.payload.id);
-//     default:
-//       return state;
-//   }
-// };
-
-// export default addItems;
-
-// src/redux/reducers/addItem.js
-
 const addItem = [];
 
 const addItems = (state = addItem, action) => {
